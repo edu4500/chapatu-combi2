@@ -7,7 +7,21 @@ var sendJsonResponse = function(res, status, content) {
 };
 
 module.exports.getTodos = function(req,res){
-  Rol.find({},function(err,Rol){
+  Rol.find(function(err,Rol){
+    if(err){sendJsonResponse(res,400,err);}
+    else{sendJsonResponse(res,200,Rol);}
+  });
+}
+
+module.exports.getCamion = function(req,res){
+  Rol.find({"tag": "camion"},function(err,Rol){
+    if(err){sendJsonResponse(res,400,err);}
+    else{sendJsonResponse(res,200,Rol);}
+  });
+}
+
+module.exports.getBasurero = function(req,res){
+  Rol.find({"tag": "basurero"},function(err,Rol){
     if(err){sendJsonResponse(res,400,err);}
     else{sendJsonResponse(res,200,Rol);}
   });

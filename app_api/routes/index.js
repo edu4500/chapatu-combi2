@@ -8,5 +8,7 @@ var rol = require('../controllers/rol');
 router.post( '/rol' ,rol.CrearUbicacion );
 router.post( '/rol/:rolid' ,rol.ActualizarUbicacion );
 router.get( '/rol' ,rol.getTodos );
+router.get( '/rol/basurero' ,rol.getBasurero );
+router.get( '/rol/camion' ,rol.getCamion );
 
 module.exports = router;
